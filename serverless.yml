@@ -1,0 +1,20 @@
+service: aws-node-http-api-project
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  environment:
+    SECRET_AUTH_KEY: ${env:SECRET_AUTH_KEY}
+
+functions:
+  app:
+    handler: src/index.handler
+    events:
+      - httpApi: '*'
+
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
