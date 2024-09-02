@@ -1,22 +1,22 @@
 const jwt = require('jsonwebtoken')
-
-const secretAuthKey = process.env.SECRET_AUTH_KEY
+const { SECRET_AUTH_KEY } = require('./constants')
 
 const logger = function (req, res, next) {
   // Add a Logger Library
-  console.log(`Request: ${req}`)
+  const requestInfo = {
+    headers: req.headers,
+    method: req.method,
+    url: req.url,
+    body: req.body,
+    path: req.path,
+    query: req.query,
+    hostname: req.hostname,
+    params: req.params
+  }
+  console.log(`Request: ${JSON.stringify(requestInfo)}`)
   next()
 }
 
-// TODO Delete if not needed
-// const addUser = async function (req, res, next) {
-//   console.log('ADD USER')
-//   if (req.query.userId) {
-//     const userService = ServiceFactory.getUserService()
-//     const foundUser = await userService.find({id: req.query.userId})
-//   }
-//   next()
-// }
 
 function authToken (req, res, next) {
   const token = req.header('Authorization')
@@ -25,8 +25,7 @@ function authToken (req, res, next) {
   }
 
   try {
-    const decoded = jwt.verify(token, secretAuthKey)
-    console.log({decoded})
+    const decoded = jwt.verify(token, SECRET_AUTH_KEY)
     req.userId = decoded.userId
     next()
   } catch (error) {

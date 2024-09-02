@@ -2,8 +2,9 @@ const express = require('express')
 const ServiceFactory = require('../services')
 
 const router = express.Router()
+
 router.post('/', async (req, res, next) => {
-  const { operation, credit } = req.body || {}
+  const { operation, credit, number1, number2 } = req.body || {}
   const operationService = ServiceFactory.getOperationService()
   const recordService = ServiceFactory.getRecordService()
   try {
@@ -14,7 +15,6 @@ router.post('/', async (req, res, next) => {
       next(new Error('Operation not found'))
       return
     }
-    console.log(`Operation: ${JSON.stringify(operationFound)}`)
 
     if (credit < operationFound.cost) {
       next(new Error('Not enough credit to perform operation'))
@@ -26,7 +26,7 @@ router.post('/', async (req, res, next) => {
       user_id: req.userId,
       amount: operationFound.cost,
       user_balance: credit - operationFound.cost,
-      operation_response: '34'
+      operation_response: await operationService.performCalculation(operationFound.type, number1, number2)
     })
 
     return res.send({ operation: 'Operation success', newRecord })

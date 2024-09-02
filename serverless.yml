@@ -7,6 +7,7 @@ provider:
   runtime: nodejs20.x
   environment:
     SECRET_AUTH_KEY: ${env:SECRET_AUTH_KEY}
+    RANDOM_ORG_API_KEY: ${env:RANDOM_ORG_API_KEY }
 
 functions:
   app:

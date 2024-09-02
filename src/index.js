@@ -6,8 +6,8 @@ const bodyParser = require('body-parser')
 const { logger, authToken } = require('./middlewares')
 const app = express()
 
-app.use(logger)
 app.use(bodyParser.json())
+app.use(logger)
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
@@ -20,8 +20,8 @@ app.get('/health-check', (req, res, next) => {
   })
 })
 
-// app.use('/users', userRouter)
 app.use('/auth', authRouter)
+
 app.use('/operation', authToken, calcOperation)
 
 app.use((req, res, next) => {

@@ -36,7 +36,7 @@ module.exports = {
       },
       operation_response: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
