@@ -17,7 +17,6 @@ const logger = function (req, res, next) {
   next()
 }
 
-
 function authToken (req, res, next) {
   const token = req.header('Authorization')
   if (!token) {
@@ -33,7 +32,15 @@ function authToken (req, res, next) {
   }
 }
 
+function pagination (req, res, next) {
+  req.query.size = Number.parseInt(req.query.size) || 10
+  req.query.page = Number.parseInt(req.query.page) || 0
+
+  return next()
+}
+
 module.exports = {
   logger,
-  authToken
+  authToken,
+  pagination
 }

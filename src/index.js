@@ -2,8 +2,9 @@ const serverless = require('serverless-http')
 const express = require('express')
 const authRouter = require('./routes/auth')
 const calcOperation = require('./routes/calc-operation')
+const records = require('./routes/records')
 const bodyParser = require('body-parser')
-const { logger, authToken } = require('./middlewares')
+const { logger, authToken, pagination } = require('./middlewares')
 const app = express()
 
 app.use(bodyParser.json())
@@ -23,6 +24,7 @@ app.get('/health-check', (req, res, next) => {
 app.use('/auth', authRouter)
 
 app.use('/operation', authToken, calcOperation)
+app.use('/records', authToken, pagination, records)
 
 app.use((req, res, next) => {
   return res.status(404).json({
