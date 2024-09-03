@@ -5,6 +5,8 @@ const calcOperation = require('./routes/calc-operation')
 const records = require('./routes/records')
 const bodyParser = require('body-parser')
 const { logger, authToken, pagination } = require('./middlewares')
+const { API_VERSIONS } = require('./constants')
+const version = API_VERSIONS.V1
 const app = express()
 
 app.use(bodyParser.json())
@@ -21,10 +23,10 @@ app.get('/health-check', (req, res, next) => {
   })
 })
 
-app.use('/auth', authRouter)
+app.use(`/${version}/auth`, authRouter)
 
-app.use('/operation', authToken, calcOperation)
-app.use('/records', authToken, pagination, records)
+app.use(`/${version}/operation`, authToken, calcOperation)
+app.use(`/${version}/records`, authToken, pagination, records)
 
 app.use((req, res, next) => {
   return res.status(404).json({

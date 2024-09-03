@@ -3,12 +3,19 @@ const ServiceFactory = require('../services')
 const router = express.Router()
 
 router.get('/', async (req, res, next) => {
-  const { page, size } = req.query
+  const { page, size, search } = req.query
 
   const recordService = ServiceFactory.getRecordService()
-  const options = { where: { user_id: req.userId }, offset: page * size, limit: size }
-  const records = await recordService.findAll(options)
+  const records = await recordService.getRecords(req.userId, page, size, search)
   res.send(records)
+})
+
+router.delete('/:id', async (req, res, next) => {
+  const recordId = req.params.id
+
+  const recordService = ServiceFactory.getRecordService()
+  await recordService.delete(recordId, req.userId)
+  res.sendStatus(200)
 })
 
 module.exports = router

@@ -5,7 +5,9 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Records extends Model {
     static associate (models) {
-      // define association here
+      Records.belongsTo(models.Operations, {
+        foreignKey: 'operation_id'
+      })
     }
   }
   Records.init({
@@ -56,7 +58,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
+    paranoid: true,
     modelName: 'Records'
   })
+
   return Records
 }

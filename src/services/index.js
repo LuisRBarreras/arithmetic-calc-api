@@ -18,7 +18,7 @@ class ServiceFactory {
   }
 
   static getRecordService () {
-    const service = new RecordService(models.Records)
+    const service = new RecordService(models.Records, models)
     return service
   }
 }

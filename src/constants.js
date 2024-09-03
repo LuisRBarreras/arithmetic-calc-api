@@ -1,3 +1,5 @@
+const { Op } = require('sequelize')
+
 const OPERATORS = {
   ADDITION: 'addition',
   SUBTRACTION: 'subtraction',
@@ -10,10 +12,17 @@ const OPERATORS = {
 const CHARACTERS = 'abcdefghijklmnopqrstuvwxyz'
 const RANDOM_ORG_API_KEY = process.env.RANDOM_ORG_API_KEY
 const SECRET_AUTH_KEY = process.env.SECRET_AUTH_KEY
+const OP = Op
+
+const API_VERSIONS = {
+  V1: 'v1'
+}
 
 module.exports = {
   OPERATORS,
   CHARACTERS,
   RANDOM_ORG_API_KEY,
-  SECRET_AUTH_KEY
+  SECRET_AUTH_KEY,
+  OP,
+  API_VERSIONS
 }
