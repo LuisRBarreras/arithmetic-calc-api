@@ -21,6 +21,7 @@ functions:
     handler: src/index.handler
     events:
       - httpApi: '*'
+    cors: true
 
 
 plugins:

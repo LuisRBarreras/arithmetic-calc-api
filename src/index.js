@@ -6,9 +6,12 @@ const records = require('./routes/records')
 const bodyParser = require('body-parser')
 const { logger, authToken, pagination } = require('./middlewares')
 const { API_VERSIONS } = require('./constants')
+const cors = require('cors')
+
 const version = API_VERSIONS.V1
 const app = express()
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(logger)
 
