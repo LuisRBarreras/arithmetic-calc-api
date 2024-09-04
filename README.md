@@ -21,3 +21,9 @@ This project serves as the API for an application that provides simple calculato
 4. Run `npm run seed-all`
 5. Run `npm run start`
 
+## Usage Instructions
+Start the Application: After starting the application, you can explore the available endpoints documented in the provided Postman collection.
+
+Authentication: First, log in using the appropriate login endpoint. Once logged in, copy the generated token.
+
+Accessing Endpoints: Use the token to authenticate your requests while testing the endpoints in the Postman collection.
