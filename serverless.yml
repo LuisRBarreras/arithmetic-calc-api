@@ -7,7 +7,14 @@ provider:
   runtime: nodejs20.x
   environment:
     SECRET_AUTH_KEY: ${env:SECRET_AUTH_KEY}
-    RANDOM_ORG_API_KEY: ${env:RANDOM_ORG_API_KEY }
+    RANDOM_ORG_API_KEY: ${env:RANDOM_ORG_API_KEY}
+    LOCAL_USERNAME_DB: ${env:LOCAL_USERNAME_DB}
+    LOCAL_PASSWORD_DB: ${env:LOCAL_PASSWORD_DB}
+    DEV_USERNAME_DB: ${env:DEV_USERNAME_DB}
+    DEV_PASSWORD_DB: ${env:DEV_PASSWORD_DB}
+    DEV_HOST_DB: ${env:DEV_HOST_DB}
+    NODE_ENV: ${env.NODE_ENV}
+
 
 functions:
   app:

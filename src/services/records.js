@@ -44,13 +44,13 @@ class RecordService {
       }
     }
 
-    const options = { where, offset: page * size, limit: size }
+    const options = { where, offset: page * size, limit: size, order: [['createdAt', 'DESC']] }
     const include = [{
       model: this.models.Operations,
       required: true
     }]
-    const { count, rows } = await this.model.findAndCountAll({ ...options, include })
 
+    const { count, rows } = await this.model.findAndCountAll({ ...options, include })
     return { count, rows: this.mapResponse(rows) }
   }
 

@@ -19,7 +19,7 @@ app.use((err, req, res, next) => {
 
 app.get('/health-check', (req, res, next) => {
   return res.status(200).json({
-    message: 'hello from health-check path!'
+    message: 'health-check path!'
   })
 })
 
