@@ -16,7 +16,7 @@ This project serves as the API for an application that provides simple calculato
 
 ## Instruction to execute project locally:
 1. Copy the .env_sample file and rename it to .env:
-2. Run 'npm run database'
+2. Run `npm run database`
 3. Run `npm run migration`
 4. Run `npm run seed-all`
 5. Run `npm run start`
