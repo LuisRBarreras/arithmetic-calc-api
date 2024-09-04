@@ -5,6 +5,8 @@ useDotenv: true
 provider:
   name: aws
   runtime: nodejs20.x
+  httpApi:
+    cors: true
   environment:
     SECRET_AUTH_KEY: ${env:SECRET_AUTH_KEY}
     RANDOM_ORG_API_KEY: ${env:RANDOM_ORG_API_KEY}
@@ -21,7 +23,6 @@ functions:
     handler: src/index.handler
     events:
       - httpApi: '*'
-    cors: true
 
 
 plugins:
