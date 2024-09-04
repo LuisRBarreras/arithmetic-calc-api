@@ -1,0 +1,2 @@
+
+process.env.SECRET_AUTH_KEY = '92BDA873ABBFD'

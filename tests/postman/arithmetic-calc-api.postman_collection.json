@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "05cc38c7-193d-4ce4-9756-4113813b12c5",
+		"name": "arithmetic-calc-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13940"
+	},
+	"item": [
+		{
+			"name": "health-check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "2GGVshkw2fg6AOAaALpc",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url_no_version}}/health-check",
+					"host": [
+						"{{url_no_version}}"
+					],
+					"path": [
+						"health-check"
+					],
+					"query": [
+						{
+							"key": "employerCodes",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "searchTerm",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "amount",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "categories",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "pageIndex",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "to",
+							"value": "2020-01-21",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "health-check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "2GGVshkw2fg6AOAaALpc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url_no_version}}/health-check",
+							"host": [
+								"{{url_no_version}}"
+							],
+							"path": [
+								"health-check"
+							],
+							"query": [
+								{
+									"key": "employerCodes",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "searchTerm",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "pageIndex",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": "2020-01-21",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 04 Sep 2024 02:14:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"20-7Cd0EnUhrz0OeN4s16q2EaTZ1Vs\""
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "djtQ-hLqoAMEaIg="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"health-check path!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "2GGVshkw2fg6AOAaALpc",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"lrbs0190@gmail.com\",\n    \"password\": \"PassPro123\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "employerCodes",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "searchTerm",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "amount",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "categories",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "pageIndex",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "to",
+							"value": "2020-01-21",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calc-operation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operation\":\"multiplication\",\n    \"number1\": 10,\n    \"number2\": 5,\n    \"credit\": 500\n}"
+				},
+				"url": {
+					"raw": "{{url}}/operation",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"operation"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "calc-operation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"operation\":\"multiplication\",\n    \"number1\": 10,\n    \"number2\": 5,\n    \"credit\": 500\n}"
+						},
+						"url": {
+							"raw": "{{url}}/operation",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"operation"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "216"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"d8-Jia1wtn8e9jnqurpw59xRyFwYj4\""
+						},
+						{
+							"key": "cache-control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 04 Sep 2024 02:11:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"operation\": \"Operation success\",\n    \"newRecord\": {\n        \"id\": 41,\n        \"operation_id\": 3,\n        \"user_id\": 1,\n        \"amount\": 3,\n        \"user_balance\": 497,\n        \"operation_response\": 50,\n        \"updatedAt\": \"2024-09-04T02:11:35.132Z\",\n        \"createdAt\": \"2024-09-04T02:11:35.132Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "calc-operation-multiplication",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyNTIyMDA3MCwiZXhwIjoxNzI1MjYzMjcwfQ.GC5pKKLsFqPCK0Ca2PEgMa64aXRVdVUrEkgzjmxN5S0",
+						"type": "text"
+					},
+					{
+						"key": "Origin",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"operation\":\"multiplication\",\n    \"number1\": 10,\n    \"number2\": 5,\n    \"credit\": 500\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/operation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"operation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "records",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/records?size=5&page=0",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"records"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "5"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "records search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyNTMyNzgxNCwiZXhwIjoxNzI1MzcxMDE0fQ.lZSvN_TPxXkCPW9GyJQzv4cgokyge2sa6jcGuMsRQBk",
+						"type": "text"
+					},
+					{
+						"key": "Origin",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/records?size=10&page=0&search=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"records"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "search",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "records",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "Origin",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/records/19",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"records",
+						"19"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
